@@ -24,6 +24,31 @@ git clone https://github.com/LautaroBlasco23/kickstart.nvim.git ~/.config/nvim
 nvim
 ```
 
+### If you're getting errors installing Python tools (black, isort)
+
+Newer Ubuntu versions (Python ≥3.12) block global `pip` installs.  
+If you see an error like `externally-managed-environment`, install the tools using `pipx`.
+
+```bash
+# install pipx
+sudo apt update
+sudo apt install -y pipx
+pipx ensurepath
+
+# reload shell
+source ~/.bashrc
+
+# install python formatting tools
+pipx install black
+pipx install isort
+
+# verify installation
+black --version
+isort --version
+```
+
+These tools are used by the formatter integration and may be required by plugins installed through Mason.
+
 ---
 
 ## File architecture
