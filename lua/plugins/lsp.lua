@@ -74,7 +74,7 @@ return {
       -- Formatters and linters managed by mason
       vim.list_extend(ensure_installed, {
         "stylua", "prettier", "eslint_d", "black", "isort",
-        "gofmt", "goimports", "shfmt",
+        "goimports", "shfmt",
       })
 
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
